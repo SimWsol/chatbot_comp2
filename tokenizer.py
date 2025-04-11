@@ -39,7 +39,6 @@ class SimpleTokenizer:
         return [self.word2idx.get(word, unk_idx) for word in tokens]
 
     def decode(self, indices):
-        """Convert token indices back to readable text."""
         # Convert indices to tokens
         tokens = [self.idx2word.get(idx, "<unk>") for idx in indices]
 

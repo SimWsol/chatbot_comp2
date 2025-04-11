@@ -13,7 +13,7 @@ MAX_LENGTH = 5000
 
 
 def preprocess_text(text):
-    """Cleans and normalizes text by removing extra spaces and fixing punctuation."""
+    # Cleans and normalizes text by removing extra spaces and fixing punctuation
     if not isinstance(text, str):
         return ""
     text = re.sub(r"\s+", " ", text)
@@ -22,12 +22,12 @@ def preprocess_text(text):
 
 
 def is_valid_length(input_text, response_text):
-    """Checks if both input and response meet the length requirements."""
+    # Checks if both input and response meet the length requirements
     return MIN_LENGTH <= len(input_text) <= MAX_LENGTH and MIN_LENGTH <= len(response_text) <= MAX_LENGTH
 
 
 def save_pair_to_files(txt_file, jsonl_file, input_text, response_text):
-    """Processes and writes valid input-response pairs to text and JSONL files."""
+    # Processes and writes valid input-response pairs to text and JSONL files.
     input_cleaned = preprocess_text(input_text)
     response_cleaned = preprocess_text(response_text)
     if is_valid_length(input_cleaned, response_cleaned):

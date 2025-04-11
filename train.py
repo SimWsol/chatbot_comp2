@@ -74,7 +74,7 @@ for epoch in range(NUM_EPOCHS):
 
     avg_train_loss = total_loss / len(train_input)
 
-    # === Validation ===
+    # Validation
     model.eval()
     val_loss, correct_tokens, total_tokens = 0, 0, 0
     with torch.no_grad():
